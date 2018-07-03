@@ -101,7 +101,7 @@ class TLDetector(object):
 
         """
         #TODO implement
-        closest_idx=self.waypoint_tree.query([x,y],1)[1]
+        closest_idx=self.waypoint_tree.query([x,y],1)[1]#return the closest waypoint's index and save this in closest_idx
         return closest_idx
 
     def get_light_state(self, light):
@@ -143,7 +143,7 @@ class TLDetector(object):
 
         #TODO find the closest visible traffic light (if one exists)
 
-        diff= len(self.waypoints.waypoints)
+        diff= len(self.waypoints.waypoints)#will save the length of the waypoints
         for i,light in enumerate(self.lights):
             line= stop_line_positions[i]
             temp_wp_idx=self.get_closest_waypoint(line[0],line[1])
